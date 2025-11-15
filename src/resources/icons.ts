@@ -1,3 +1,4 @@
+import React from "react";
 import { IconType } from "react-icons";
 
 import {
@@ -28,8 +29,9 @@ import {
   SiFigma,
   SiSupabase,
 } from "react-icons/si";
+import { FaDumbbell } from "react-icons/fa6";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -58,11 +60,29 @@ export const iconLibrary: Record<string, IconType> = {
   nextjs: SiNextdotjs,
   supabase: SiSupabase,
   figma: SiFigma,
+  myprotein: (({ size, className, style, title }) => {
+    const dim = typeof size === "number" ? size : size ? parseInt(String(size), 10) : 24;
+    return React.createElement("img", {
+      src: "/images/myprotein.png",
+      alt: title || "Myprotein",
+      className,
+      style: {
+        width: dim,
+        height: dim,
+        objectFit: "contain",
+        display: "inline-block",
+        filter: "none",
+        ...style,
+      },
+    });
+  }) as IconType,
   facebook: FaFacebook,
   pinterest: FaPinterest,
   whatsapp: FaWhatsapp,
   reddit: FaReddit,
   telegram: FaTelegram,
+  instagram: FaInstagram,
+  tiktok: FaTiktok,
 };
 
 export type IconLibrary = typeof iconLibrary;
